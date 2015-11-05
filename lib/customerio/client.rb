@@ -17,7 +17,7 @@ module Customerio
       end
     end
 
-    def initialize(site_id, secret_key, options = {})
+    def initialize(site_id, secret_key, options = {:json => true})
       @auth = { :username => site_id, :password => secret_key }
       if options[:json].nil?
         warn "[DEPRECATION] Customerio::Client: JSON encoding will be the default in the next release. We recommend switching to JSON. To continue to use form-encoding, you must specify `:json => false` in your initializer."
